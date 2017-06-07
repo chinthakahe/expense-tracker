@@ -1,9 +1,3 @@
-<?php
-//	echo $this->Html->script('jquery-3.2.0.min.js', ['block' => 'core']);
-//	echo $this->Html->script('bootstrap.min.js', ['block' => 'scriptBottom']);
-//	echo $this->Html->script('material.min.js', ['block' => 'scriptBottom']);
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -14,10 +8,7 @@
             Expense's Tracker
 		</title>
 		<?= $this->Html->meta('icon') ?>
-		<!-- Bootstrap -->
-<!--        --><?php
-//            echo $this->Html->css('bootstrap.min');
-//        ?>
+        <?= $this->Html->css('bootstrap.min'); ?>
 		<?= $this->Html->css('base.css') ?>
 		<?= $this->Html->css('cake.css') ?>
 
