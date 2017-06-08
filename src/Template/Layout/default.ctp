@@ -36,7 +36,7 @@ $cakeDescription = 'Daily expenses tracking system';
     <?= $this->fetch('script') ?>
 </head>
 <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -64,7 +64,11 @@ $cakeDescription = 'Daily expenses tracking system';
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <?= $this->Html->link('Expenses', ['controller' => 'Expenses', 'action' => 'index', '_full' => true]) ?>
+                                <?= $this->Html->link('Home', ['controller' => 'Expenses', 'action' => 'index', '_full' => true]) ?>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+		                        <?= $this->Html->link('All Expenses', ['controller' => 'Expenses', 'action' => 'index', '_full' => true]) ?>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li>
@@ -84,32 +88,9 @@ $cakeDescription = 'Daily expenses tracking system';
             </div>
         </div>
     </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">
-                </ul>
-        </div>
-    </nav>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
+        <h1><a href=""><?= $this->fetch('title') ?></a></h1>
         <?= $this->fetch('content') ?>
     </div>
     <footer>

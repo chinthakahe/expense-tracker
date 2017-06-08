@@ -4,22 +4,15 @@
   */
 use Cake\I18n\Time;
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Expense'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Expenses Types'), ['controller' => 'ExpensesTypes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Expenses Type'), ['controller' => 'ExpensesTypes', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+<ol class="breadcrumb">
+    <li><?= $this->Html->link(__('Add Expenses'), ['controller' => 'Expenses', 'action' => 'add']) ?></li>
+    <li><?= $this->Html->link(__('List Expenses Types'), ['controller' => 'ExpensesTypes', 'action' => 'index']) ?></li>
+    <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+</ol>
 <div class="expenses index large-9 medium-8 columns content">
-    <h3><?= __('Expenses') ?></h3>
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('expenses_types_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('amount') ?></th>
@@ -32,7 +25,6 @@ use Cake\I18n\Time;
         <tbody>
             <?php foreach ($expenses as $expense): ?>
             <tr>
-                <td><?= $this->Number->format($expense->id) ?></td>
                 <td><?= $expense->has('expenses_type') ? $this->Html->link($expense->expenses_type->name, ['controller' => 'ExpensesTypes', 'action' => 'view', $expense->expenses_type->id]) : '' ?></td>
                 <td><?= $expense->has('user') ? $this->Html->link($expense->user->first_name, ['controller' => 'Users', 'action' => 'view', $expense->user->id]) : '' ?></td>
                 <td><?= $this->Number->format($expense->amount) ?></td>
